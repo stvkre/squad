@@ -12,6 +12,12 @@ public class HeroTest {
       Hero myHero = new Hero("engage");
       assertEquals(true, myHero instanceof Hero);
     }
+
+    @Test
+    public void Hero_instantiatesWithName_String() {
+      Hero myHero = new Hero("steve")
+      assertEquals("steve", myHero.getName());
+    }
   }
 
 }
