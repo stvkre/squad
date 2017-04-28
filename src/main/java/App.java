@@ -7,6 +7,15 @@ import static spark.Spark.*;
 
 public class App {
   public static void main(String[] args) {
+    ProcessBuilder process = new ProcessBuilder();
+     Integer port;
+     if (process.environment().get("PORT") != null) {
+         port = Integer.parseInt(process.environment().get("PORT"));
+     } else {
+         port = 4567;
+     }
+
+    setPort(port);
     staticFileLocation("/public");
     String layout = "templates/layout.vtl";
 
@@ -66,7 +75,7 @@ public class App {
        int age = Integer.parseInt(request.queryParams("age"));
        String power = request.queryParams("power");
        String weakness = request.queryParams("weakness");
-       Hero newHero = new Hero();
+       Hero newHero = new Hero(name);
        heroes.add(newHero);
 
        model.put("template", "templates/success.vtl");
