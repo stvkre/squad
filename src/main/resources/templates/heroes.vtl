@@ -1,7 +1,9 @@
-<h1>Hero list!</h1> #if ($heroes)
+<h1>Hero list!</h1>
+#if ($heroes)
 <ul>
-  #foreach ($hero in $heroes) $hero.getName()
-  <li><a href="/heroes/$hero.getId()">$hero.getName()</a></li>
+  #foreach ($hero in $heroes)
+  $hero.getId()
+  <li><a href="/hero/$hero.getId()">$hero.getName()</a></li>
   #end
 </ul>
 #else
