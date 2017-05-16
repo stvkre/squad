@@ -6,7 +6,7 @@ public class Squad {
   private int mId;
   private static List <Squad> instances = new ArrayList<Squad>();
 
-  public Hero(String name) {
+  public Squad(String name) {
     mName = name;
     instances.add(this);
     mId = instances.size();
@@ -18,16 +18,8 @@ public class Squad {
     return mName;
   }
 
-  public int getAge() {
-    return mAge;
-  }
-
-  public String getPower() {
-    return mPower;
-  }
-
-  public String getWeakness() {
-    return mWeakness;
+  public static List<Squad> all() {
+    return instances;
   }
 
   public int getId() {

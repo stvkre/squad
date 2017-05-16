@@ -35,6 +35,11 @@ public class Hero {
     return mWeakness;
   }
 
+  public static List<Hero> all()
+  {
+    return instances;
+  }
+
   public int getId() {
     return mId;
   }
