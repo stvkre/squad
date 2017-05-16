@@ -103,5 +103,12 @@ get("/heroes", (request, response) -> {
         return new ModelAndView(model, layout);
       }, new VelocityTemplateEngine());
 
+      // Viewing Squad information
+      get("/squads", (request, response) ->{
+        Map<String, Object> model = new HashMap<String, Object>();
+        model.put("squads", Squad.all());
+        model.put("template", "templates/squads.vtl");
+        return new ModelAndView(model, layout);
+      }, new VelocityTemplateEngine());
   }
 }
