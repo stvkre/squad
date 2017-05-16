@@ -3,8 +3,9 @@
 
 <ul>
   #foreach($hero in $squad.getHeroes())
-  <li><a href="/hero/$hero.getId()">$hero.getName()</a></li>
+  <li><a href="/heroes/$hero.getId()">$hero.getName()</a></li>
   #end
 </ul>
-
-  <a href="/heroes">Go Back </a>
+#end
+<a href="/squads/$squad.getId()/heroes/new">Create a Superhero</a>
+<a href="/squads">Go Back </a>
