@@ -5,6 +5,7 @@ public class Squad {
   private String mName;
   private int mId;
   private static List <Squad> instances = new ArrayList<Squad>();
+  private List<Hero> mHeroes;
 
   public Squad(String name) {
     mName = name;
@@ -22,12 +23,24 @@ public class Squad {
     return instances;
   }
 
+  public static void clear() {
+    instances.clear();
+  }
+
   public int getId() {
     return mId;
   }
 
-  public static Hero find(int id) {
+  public static Squad find(int id) {
     return instances.get(id - 1);
+  }
+
+  public List<Hero> getHeroes() {
+    return mHeroes;
+  }
+
+  public void addHero(Hero hero) {
+    mHeroes.add(hero);
   }
 
 }
